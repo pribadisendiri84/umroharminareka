@@ -33,10 +33,12 @@
 
 .carousel-caption h5 {
   font-size: 1rem;
+  color: white;
 }
 
 .carousel-caption p {
   font-size: 0.8rem;
+  color: white;
 }
 
 .card {
@@ -110,34 +112,30 @@
   position: relative; /* Ensure the close button appears within the card */
 }
 
-/* Responsive: untuk layar di bawah 768px */
+.carousel-inner,
+.carousel-item {
+  height: 100vh; /* Full height of the viewport */
+}
+
+.carousel-item img {
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+  object-position: center center; /* Centers the image */
+  height: 100%; /* Makes the image fill the height of the container */
+  width: 100%; /* Makes the image fill the width of the container */
+}
+
+/* css style for mobile browser */
 @media (max-width: 768px) {
-  .carousel-caption {
-    position: static; /* Pindahkan caption keluar dari gambar */
-    background: transparent; /* Hilangkan background di mobile */
-    padding: 10px 15px;
-    text-align: center; /* Teks lebih rapi */
-  }
-
-  .carousel-item img {
-    height: auto; /* Pastikan gambar tidak terpotong */
-    border-radius: 15px;
-  }
-
-  .carousel-inner {
-    border-radius: 15px;
-    background: whitesmoke;
-  }
-
   body {
     background: #d3dfe5;
-    font-family: "Delius", cursive;
-    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
     font-style: normal;
   }
 
   navbar {
     background: #d3dfe5;
+    font-size: 3px;
   }
 
   header {
@@ -148,11 +146,10 @@
 
   .card.zoom-active {
     position: fixed;
-    transform: scale(2);
+    transform: translate(-50%, -50%) scale(1.7); /* Center and scale */
     z-index: 10;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%) scale(1.7); /* Adjust to truly center the element */
+    top: 50%;
+    left: 50%;
     transition: transform 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
@@ -172,24 +169,23 @@
     display: block;
   }
 
-  /* Gaya tombol close */
   .close-btn {
-    padding: 0.375rem 0.8rem; /* Sama dengan tombol lainnya */
-    font-size: 14px; /* Sama dengan font tombol lainnya */
-    border-radius: 0.3rem; /* Konsistensi dengan tombol lainnya */
-    background-color: #dc3545; /* Warna merah untuk tombol close */
-    color: #fff; /* Warna teks putih */
-    border: none; /* Hilangkan border default */
-    display: inline-block;
-    transition: transform 0.2s ease; /* Animasi hover */
+    padding: 0.375rem 0.8rem;
+    font-size: 14px;
+    border-radius: 0.3rem;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    transition: transform 0.2s ease;
   }
 
   .close-btn:hover {
-    transform: scale(1.1); /* Hover untuk efek visual */
-    background-color: #c82333; /* Warna merah gelap saat dihover */
+    transform: scale(1.1);
+    background-color: #c82333;
   }
+
   .card-body {
-    position: relative; /* Ensure the close button appears within the card */
+    position: relative;
   }
 
   .social-links a:hover {
@@ -197,12 +193,60 @@
   }
 
   .card.zoom-active .social-links a {
-    width: 2.5rem; /* Lebar tombol */
-    height: 2.5rem; /* Tinggi tombol */
-    font-size: 1.2rem; /* Ukuran ikon */
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
   }
 
   .card.zoom-active .social-links a:hover {
-    transform: scale(1.05); /* Sedikit membesar saat hover */
+    transform: scale(1.05);
+  }
+
+  .carousel-inner,
+  .carousel-item img {
+    border-radius: 20px;
+  }
+
+  .carousel-item {
+    object-position: center center;
+    height: 85vh;
+  }
+
+
+  .carousel-caption {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: rgba(242, 239, 239, 0.7);
+    text-align: center;
+    padding: 15px; /* Mengurangi padding agar tidak terlalu besar */
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem;
+    color: rgb(2, 2, 2);
+  }
+
+  .carousel-caption p {
+    font-size: 0.8rem;
+    color: rgb(41, 32, 32);
+  }
+
+  .carousel-indicators {
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .carousel-contain {
+    padding: 0;
+  }
+
+  .carousel-dark .carousel-caption {
+    color: #efe5e517;
+    bottom: 140px;
+    position: absolute;
+    border-radius: 0px;
   }
 }

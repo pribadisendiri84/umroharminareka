@@ -1,25 +1,9 @@
 :root {
-  --slate-gray: #78829aff;
-  --french-gray: #b9becbff;
-  --platinum: #e0e2e8ff;
-  --orange-peel: #faa132ff;
-  --yale-blue: #273d76; /* Navy Blue */
+
 }
 
-.carousel-contain {
-  background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity));
-  padding: 0px 0px;
-}
 /* Gaya umum untuk carousel caption */
 .carousel-caption {
-  background: rgba(
-    245,
-    245,
-    245,
-    0.7
-  ); /* Light translucent white (whitesmoke) */
-  backdrop-filter: blur(10px); /* Soft blur effect to resemble morning dew */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
   border-radius: 10px;
   padding: 15px 20px;
 }
@@ -118,23 +102,24 @@
 }
 
 .carousel-item img {
-  object-fit: cover; /* Ensures the image covers the area without stretching */
-  object-position: center center; /* Centers the image */
-  height: 100%; /* Makes the image fill the height of the container */
-  width: 100%; /* Makes the image fill the width of the container */
+  width: 100%; /* Gambar akan menyesuaikan lebar kontainer */
+  height: 10%0; /* Menjaga rasio aspek gambar */
 }
 
 /* css style for mobile browser */
 @media (max-width: 768px) {
   body {
-    background: #d3dfe5;
     font-family: "Poppins", sans-serif;
     font-weight: 200;
     font-style: normal;
+    background-color: #ffffff;
+    background: linear-gradient(135deg, #f9f9fc55 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #f9f9fc 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #f9f9fc55 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #f9f9fc 25%, #ffffff 25%) 0px 0/ 20px 20px;
+    
   }
 
+
   navbar {
-    background: #d3dfe5;
+    background: radial-gradient(circle, #faa132, #273d76);
     font-size: 3px;
   }
 
@@ -207,36 +192,39 @@
     border-radius: 20px;
   }
 
-  .carousel-item {
-    object-position: center center;
+  .carousel-inner {
     height: 85vh;
   }
 
+  .carousel-item {
+    object-position: center center;
+  }
 
   .carousel-caption {
     position: absolute;
     left: 0;
     width: 100%;
-    background: rgba(242, 239, 239, 0.7);
     text-align: center;
-    padding: 15px; /* Mengurangi padding agar tidak terlalu besar */
+    padding: 10px; /* Mengurangi padding agar tidak terlalu besar */
+    border-radius: 10px;
+    padding: 15px 20px;
   }
 
   .carousel-caption h5 {
     font-size: 1rem;
-    color: rgb(2, 2, 2);
+    color: rgb(248, 245, 245);
   }
 
   .carousel-caption p {
     font-size: 0.8rem;
-    color: rgb(41, 32, 32);
   }
 
-  .carousel-indicators {
-    bottom: -30px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+  .carousel-indicators button {
+    background-color: white; /* Ubah warna indikator menjadi putih */
+  }
+
+  .carousel-indicators .active {
+    background-color: white; /* Warna putih untuk indikator aktif */
   }
 
   .carousel-contain {
@@ -244,9 +232,13 @@
   }
 
   .carousel-dark .carousel-caption {
-    color: #efe5e517;
+    color: #d56a6a17;
     bottom: 140px;
     position: absolute;
     border-radius: 0px;
+  }
+
+  h2 {
+    color: white;
   }
 }
